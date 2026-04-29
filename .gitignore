@@ -1,0 +1,10 @@
+rollinggo-npm-cli/node_modules/
+rollinggo-npm-cli/dist/
+rollinggo-npm-cli/*.tgz
+
+rollinggo-uv-cli/.venv/
+rollinggo-uv-cli/.pytest_cache/
+rollinggo-uv-cli/__pycache__/
+rollinggo-uv-cli/dist/
+rollinggo-uv-cli/src/**/__pycache__/
+rollinggo-uv-cli/tests/**/__pycache__/
