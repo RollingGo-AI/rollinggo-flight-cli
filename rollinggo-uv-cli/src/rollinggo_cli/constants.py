@@ -2,7 +2,7 @@ import os
 
 BASE_URL_STAGING = "https://travelportal-api-staging.aigohotel.com"
 BASE_URL_PRODUCTION = "https://mcp.rollinggo.cn"
-DEFAULT_BASE_URL = os.getenv("ROLLINGGO_API_BASE_URL", BASE_URL_STAGING)
+DEFAULT_BASE_URL = os.getenv("ROLLINGGO_API_BASE_URL", BASE_URL_PRODUCTION)
 
 CABIN_GRADES = (
     "ECONOMY",

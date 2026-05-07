@@ -1,6 +1,6 @@
 export const BASE_URL_STAGING = "https://travelportal-api-staging.aigohotel.com";
 export const BASE_URL_PRODUCTION = "https://mcp.rollinggo.cn";
-export const DEFAULT_BASE_URL = process.env.ROLLINGGO_API_BASE_URL || BASE_URL_STAGING;
+export const DEFAULT_BASE_URL = process.env.ROLLINGGO_API_BASE_URL || BASE_URL_PRODUCTION;
 
 export const CABIN_GRADES = [
   "ECONOMY",
