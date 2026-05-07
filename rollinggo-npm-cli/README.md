@@ -1,16 +1,15 @@
-# RollingGo Flight CLI (Python / uvx)
+# RollingGo Flight CLI (Node.js / npm)
 
-RollingGo flight search CLI for uvx and pip.
+RollingGo flight search CLI for npm and npx.
 
 ## Install
 
 ```bash
 # Run directly (recommended)
-uvx rollinggo-flight --help
+npx rollinggo-flight --help
 
 # Or install globally
-pip install rollinggo-flight
-uv tool install rollinggo-flight
+npm install -g rollinggo-flight
 ```
 
 ## Usage
@@ -18,7 +17,8 @@ uv tool install rollinggo-flight
 Set your API key via environment variable or `--api-key` flag:
 
 ```bash
-export ROLLINGGO_API_KEY=your_key
+export ROLLINGGO_API_KEY=your_key   # Linux/macOS
+$env:ROLLINGGO_API_KEY="your_key"   # Windows PowerShell
 ```
 
 ## Commands
