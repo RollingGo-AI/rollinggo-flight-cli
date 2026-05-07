@@ -1,0 +1,49 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build Binaries and Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: rollinggo-npm-cli/package-lock.json
+
+      - name: Install dependencies
+        working-directory: rollinggo-npm-cli
+        run: npm ci
+
+      - name: Build bundles
+        working-directory: rollinggo-npm-cli
+        run: npm run build
+
+      - name: Build standalone binaries
+        working-directory: rollinggo-npm-cli
+        run: |
+          mkdir -p binaries
+          npx @yao-pkg/pkg dist/cli.cjs --targets node18-linux-x64    --output binaries/rollinggo-flight-linux-x64
+          npx @yao-pkg/pkg dist/cli.cjs --targets node18-linux-arm64   --output binaries/rollinggo-flight-linux-arm64
+          npx @yao-pkg/pkg dist/cli.cjs --targets node18-macos-x64    --output binaries/rollinggo-flight-macos-x64
+          npx @yao-pkg/pkg dist/cli.cjs --targets node18-macos-arm64   --output binaries/rollinggo-flight-macos-arm64
+          npx @yao-pkg/pkg dist/cli.cjs --targets node18-win-x64      --output binaries/rollinggo-flight-win-x64
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: rollinggo-npm-cli/binaries/*
+          generate_release_notes: true
