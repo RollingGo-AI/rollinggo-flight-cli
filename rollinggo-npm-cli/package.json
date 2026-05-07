@@ -1,6 +1,6 @@
 {
   "name": "rollinggo-flight",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "RollingGo flight search CLI for npm and npx.",
   "type": "module",
   "bin": {

@@ -90,7 +90,7 @@ def search_airports(
         payload = build_airport_search_payload(keyword=keyword)
         result = request_api(
             "POST",
-            "/api/mcp/airportsearch",
+            "/mcp/airportsearch",
             resolve_api_key(api_key),
             base_url=base_url,
             payload=payload,
@@ -219,7 +219,7 @@ def search_flights(
         )
         result = request_api(
             "POST",
-            "/api/mcp/flightsearch",
+            "/mcp/flightsearch",
             resolve_api_key(api_key),
             base_url=base_url,
             payload=payload,

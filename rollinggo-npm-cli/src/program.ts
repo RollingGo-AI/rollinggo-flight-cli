@@ -133,7 +133,7 @@ export function createProgram(
           });
           const response = await requestApiImpl(
             "POST",
-            "/api/mcp/airportsearch",
+            "/mcp/airportsearch",
             resolveApiKey(options.apiKey),
             { baseUrl: options.baseUrl, payload },
           );
@@ -216,7 +216,7 @@ export function createProgram(
           });
           const response = await requestApiImpl(
             "POST",
-            "/api/mcp/flightsearch",
+            "/mcp/flightsearch",
             resolveApiKey(options.apiKey),
             { baseUrl: options.baseUrl, payload },
           );
